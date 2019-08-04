@@ -30,4 +30,4 @@ RUN mkdir /home/steam/content && \
 
 WORKDIR /home/steam
 EXPOSE $PORT/udp
-CMD ["sh", "-c", "/home/steam/gmod/srcds_run -game garrysmod -port $PORT -authkey $(cat /home/steam/steam_api_key.txt) +maxplayers $MAXPLAYERS +host_workshop_collection $COLLECTIONID +map $DEFAULTMAP"]
+CMD ["sh", "-c", "/home/steam/run.sh"]

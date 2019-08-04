@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build . -t marmottes-gmod-server:1.0.0
+docker build . -t simple-gmod-server:1.0.0
