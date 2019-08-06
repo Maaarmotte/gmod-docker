@@ -1,7 +1,7 @@
 FROM debian:stretch
 
 # Install some important libs (one per line for readability)
-RUN apt-get update && apt-get install -y wget git lib32gcc1 lib32stdc++6 lib32tinfo5
+RUN apt-get update && apt-get install -y wget git lib32gcc1 lib32stdc++6 lib32tinfo5 netcat
 
 # Create new user and use it
 RUN useradd -ms /bin/bash steam
@@ -16,6 +16,9 @@ RUN wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz 
     rm -r /home/steam/gmod/garrysmod/cfg && \
     rm -r /home/steam/gmod/garrysmod/addons
 
+COPY scripts/* /home/steam/
+COPY steam_api_key.txt /home/steam/steam_api_key.txt
+
 # Define basic srcds config
 ENV PORT="27015"
 ENV MAXPLAYERS="16"
@@ -29,5 +32,6 @@ RUN mkdir /home/steam/content && \
     mkdir -p /home/steam/gmod/garrysmod/cache/srcds
 
 WORKDIR /home/steam
+HEALTHCHECK --interval=10s --timeout=15s --start-period=120s --retries=4 CMD /home/steam/health.sh "27015"
 EXPOSE $PORT/udp
-CMD ["sh", "-c", "/home/steam/run.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "/home/steam/run.sh"]

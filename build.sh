@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build . -t simple-gmod-server:1.0.0
+docker build image -t simple-gmod-server:1.0.0
