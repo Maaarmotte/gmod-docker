@@ -19,7 +19,8 @@ Run ./start_docker.sh, there will be healthcheck but the container won't be rest
 
 #### How to start in swarm mode
 1) Create a new swarm: `docker swarm init --advertise-addr <LAN_IP>`
-2) Run ./star_swarm.sh
+2) Run ./start_swarm.sh
+
 Each time the container becomes unhealthy (crashed, frozen), a new container will be started to replace it
 
 #### Notes
