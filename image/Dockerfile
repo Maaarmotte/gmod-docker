@@ -34,4 +34,4 @@ RUN mkdir /home/steam/content && \
 WORKDIR /home/steam
 HEALTHCHECK --interval=10s --timeout=15s --start-period=120s --retries=4 CMD /home/steam/health.sh "27015"
 EXPOSE $PORT/udp
-ENTRYPOINT ["/bin/bash", "-c", "/home/steam/run.sh"]
+CMD ["/bin/bash", "-c", "/home/steam/run.sh"]
