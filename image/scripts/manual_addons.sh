@@ -22,3 +22,5 @@ clone_or_pull https://github.com/TeamUlysses/ulib.git ulib
 clone_or_pull https://github.com/TeamUlysses/ulx.git ulx
 clone_or_pull https://github.com/TeamUlysses/utime.git utime
 clone_or_pull https://github.com/Nebual/NadmodPP.git nadmodpp
+clone_or_pull https://github.com/Maaarmotte/AirboatMod.git airboatmod
+
