@@ -24,6 +24,7 @@ ENV PORT="27015"
 ENV MAXPLAYERS="16"
 ENV COLLECTIONID="1824247983"
 ENV DEFAULTMAP="gm_flatgrass"
+ENV GSLT="SteamGameServerAccount"
 
 # Create the volume directories with the right user
 RUN mkdir /home/steam/content && \
