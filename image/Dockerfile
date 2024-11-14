@@ -1,7 +1,7 @@
 FROM debian:latest
 
 # Install some important libs (one per line for readability)
-RUN apt-get update && apt-get install -y wget git lib32gcc-s1 lib32stdc++6 libtinfo5 netcat-traditional
+RUN apt-get update && apt-get install -y wget git lib32gcc-s1 lib32stdc++6 libtinfo5 netcat-traditional iproute2
 
 # Create new user and use it
 RUN useradd -ms /bin/bash steam
