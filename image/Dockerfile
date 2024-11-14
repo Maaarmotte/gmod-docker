@@ -1,7 +1,7 @@
-FROM debian:stretch
+FROM debian:latest
 
 # Install some important libs (one per line for readability)
-RUN apt-get update && apt-get install -y wget git lib32gcc1 lib32stdc++6 lib32tinfo5 netcat
+RUN apt-get update && apt-get install -y wget git lib32gcc-s1 lib32stdc++6 libtinfo5 netcat-traditional
 
 # Create new user and use it
 RUN useradd -ms /bin/bash steam
@@ -13,8 +13,7 @@ RUN wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz 
     tar -xvf steamcmd_linux.tar.gz && \
     chmod +x steamcmd.sh && \
     ./steamcmd.sh +login anonymous +force_install_dir gmod +app_update 4020 validate +quit && \
-    rm -r /home/steam/gmod/garrysmod/cfg && \
-    rm -r /home/steam/gmod/garrysmod/addons
+    rm -r /home/steam/gmod/garrysmod/cfg
 
 COPY scripts/* /home/steam/
 COPY steam_api_key.txt /home/steam/steam_api_key.txt

@@ -15,7 +15,7 @@ clone_or_pull https://github.com/notcake/glib.git glib
 clone_or_pull https://github.com/notcake/gooey.git gooey
 clone_or_pull https://github.com/notcake/vfs.git vfs
 clone_or_pull https://github.com/notcake/gcodec.git gcodec
-clone_or_pull https://github.com/Noiwex/luadev.git luadev
+#clone_or_pull https://github.com/Noiwex/luadev.git luadev
 clone_or_pull https://github.com/thegrb93/StarfallEx.git starfallex
 clone_or_pull https://github.com/wiremod/advdupe2.git advdupe2
 clone_or_pull https://github.com/TeamUlysses/ulib.git ulib
